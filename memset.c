@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:02:05 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/11 17:50:13 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:06:45 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void *ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int	main ()
+/*int	main ()
 {
 	char b[] = "hello world !";
 
@@ -34,4 +34,4 @@ int	main ()
 	printf("hadiii deyalii : %s\n",b);
 	memset(b, 97,1);
 	printf("hadiii deyal system : %s\n",b);
-}
+}*/
