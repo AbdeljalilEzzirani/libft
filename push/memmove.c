@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   memmove.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 20:22:53 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/11 23:29:06 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/12 14:16:47 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/12 18:50:15 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
+	char			*str;
 
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		ft_memcpy(str, ((char *)src), len);
+		i++;
+	}
+	i = 0;
+	while (i < len)
+	{
+		ft_memcpy(dst, ((char *)src), len);
 		i++;
 	}
 	return (dst);
@@ -29,11 +36,13 @@ void *ft_memcpy(void *dst, void *src, size_t n)
 
 int	main ()
 {
-	char dst[]="hello world !";
-	char src[]="hhhhhhhhhhhhh";
+	char dst[]="hhhhhhhhhhhhhh";
+	char src[]="krkrkrkkrkrkrk";
 
-	ft_memcpy(dst, src, 5);
-	printf ("hadii deyalii : %s\n", dst);
-	memcpy(dst, src, 5);
-	printf ("hadii deyalii : %s\n", dst);
+	ft_memmove(dst, src, 8);
+	printf ("my function : %s\n", dst);
+	char ldst[]="hhhhhhhhhhhhhh";
+	char lsrc[]="krkrkrkkrkrkrk";
+	memmove(ldst, lsrc, 8);
+	printf ("my function : %s\n", ldst);
 }

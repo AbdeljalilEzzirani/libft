@@ -1,14 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 23:04:48 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/10 21:21:34 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/11 20:22:53 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/12 23:22:21 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
+void *ft_memcpy(void *dst, void *src, size_t n)
+{
+	size_t			i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dst);
+}
+
+int	main ()
+{
+	char dst[]="hhh";
+	char src[]="krkrkrkkrkrkrk";
+	ft_memcpy(dst, src, 5);
+	printf ("hadii deyalii : %s\n", dst);
+	memcpy(dst, src, 5);
+	printf ("hadii deyalii : %s\n", dst);
+}
