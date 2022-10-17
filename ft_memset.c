@@ -10,28 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+#include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+// void *ft_memset(void *b, int c, size_t len)
+// {
+// 	size_t i;
+
+// 	i = 0;
+// 	while (i <= len)
+// 		((char *)b)[i++] = c;
+// 	b = (void *)b;
+// 	return (b);
+// }
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t i;
+	size_t			i;
 
 	i = 0;
-	while (i <= len)
-		((char *)b)[i++] = c;
-	b = (void *)b;
-	return (b);
+	while (i < n)
+		((char *)s)[i++] = c;
+	
 }
 
-/*int	main ()
+int	main ()
 {
 	char b[] = "hello world !";
 
-	printf("%s\n",b);
-	ft_memset(b, 97, 1);
-	printf("hadiii deyalii : %s\n",b);
-	memset(b, 97,1);
+	// printf("%s\n",b);
+	// ft_memset(b, 97, 1);
+	// printf("hadiii deyalii : %s\n",b);
+	ft_memset(b + 2, '_', 8);
 	printf("hadiii deyal system : %s\n",b);
-}*/
+}

@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   isalnum.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:35:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/10 21:39:54 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/10 21:30:20 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/10 21:34:56 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_isascii(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 0 && c <= 127))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
 		return (1);
 	return (0);
 }
 
-int	main ()
-{
-	int	s;
-	int j;
+// int	main ()
+// {
+// 	int	s;
+// 	int j;
 
-	s = 150;
-	j = ft_isascii(s);
-	printf("%d\n", j);
-}
+// 	s = 57;
+// 	j = ft_isalnum(s);
+// 	printf("%d\n", j);
+// }

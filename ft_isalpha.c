@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:54:09 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/10 22:12:20 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/07 23:26:40 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/10 21:25:54 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isalpha(int c)
 {
-	int				i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	main ()
-{
-	const char str[]="hello world !";
-	int			i;
-
-	i = ft_strlen(str);
-	printf ("len of string is : %d\n", i);
-	i = strlen(str);
-	printf ("len of string is function system : %d\n", i);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }

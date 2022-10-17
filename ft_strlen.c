@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 20:22:53 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/12 23:22:21 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/10 21:54:09 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/10 22:12:20 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-void *ft_memcpy(void *dst, void *src, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	size_t			i;
+	int				i;
 
 	i = 0;
-	while (i < n)
-	{
-		((char *)dst)[i] = ((char *)src)[i];
+	while (s[i])
 		i++;
-	}
-	return (dst);
+	return (i);
 }
 
-int	main ()
-{
-	char dst[]="hhh";
-	char src[]="krkrkrkkrkrkrk";
-	ft_memcpy(dst, src, 5);
-	printf ("hadii deyalii : %s\n", dst);
-	memcpy(dst, src, 5);
-	printf ("hadii deyalii : %s\n", dst);
-}
+// int	main ()
+// {
+// 	const char str[]="hello world !";
+// 	int			i;
+
+// 	i = ft_strlen(str);
+// 	printf ("len of string is : %d\n", i);
+// 	i = strlen(str);
+// 	printf ("len of string is function system : %d\n", i);
+// }

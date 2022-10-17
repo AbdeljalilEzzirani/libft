@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
+
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
@@ -20,14 +19,14 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-int	main ()
-{
-	int	s;
-	int j;
+// int	main ()
+// {
+// 	int	s;
+// 	int j;
 
-	s = 126;
-	j = ft_isprint(s);
-	printf("hadii deyalii :%d\n", j);
-	j = isprint(s);
-	printf("hadii deyaal system :%d\n", j);
-}
+// 	s = 126;
+// 	j = ft_isprint(s);
+// 	printf("hadii deyalii :%d\n", j);
+// 	j = isprint(s);
+// 	printf("hadii deyaal system :%d\n", j);
+// }

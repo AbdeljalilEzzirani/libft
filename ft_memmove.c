@@ -6,43 +6,48 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:16:47 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/12 18:50:15 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/10/14 01:16:46 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memmove(void *dst, void *src, size_t len)
 {
 	size_t			i;
-	char			*str;
 
 	i = 0;
-	while (i < len)
+	if (dst == 0 && src == 0)
+		return (0);
+	if (dst > src && src + len > dst)
 	{
-		ft_memcpy(str, ((char *)src), len);
-		i++;
+		while (len--)
+			((char *)dst)[len] = ((char *)src)[len];
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		ft_memcpy(dst, ((char *)src), len);
-		i++;
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
 	return (dst);
+
 }
 
-int	main ()
-{
-	char dst[]="hhhhhhhhhhhhhh";
-	char src[]="krkrkrkkrkrkrk";
-
-	ft_memmove(dst, src, 8);
-	printf ("my function : %s\n", dst);
-	char ldst[]="hhhhhhhhhhhhhh";
-	char lsrc[]="krkrkrkkrkrkrk";
-	memmove(ldst, lsrc, 8);
-	printf ("my function : %s\n", ldst);
-}
+// int	main ()
+// {
+// 	char src[200]="Hello World";
+// 	//ft_memmove(src + 4, src + 6, 4);
+// 	//printf ("hadii deyali : %s\n", src);
+// 	memmove(src + 4, src + 6, 4);
+// 	printf ("hadii system : %s\n", src);
+// }
+// int	main ()
+// {
+// 	char src[200]="Hello World";
+	
+// 	// printf("%s", ft_memmove(NULL, src, 5));
+// 	printf("%s", memmove(NULL, src, 5));
+// }

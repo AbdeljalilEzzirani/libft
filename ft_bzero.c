@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 23:26:40 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/10 21:25:54 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/10 23:08:13 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/11 20:20:28 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_isalpha(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t			i;
+
+	i = 0;
+	while (i < n)
+		((char *)s)[i++] = 0;
 }
+
+/*void *ft_memset(void *b, int c, size_t len);
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t			i;
+
+	i = 0;
+	ft_memset(s, 0, n);
+}*/
 
 int	main ()
 {
-	int	s;
-	int j;
+	char s[13]="hello world !";
 
-	s = 89;
-	j = ft_isalpha(s);
-	printf("%d\n", j);
+	ft_bzero(s, 2);
+	printf ("hadii deyaliii     : %s\n", s+2);
+	bzero(s, 2);
+	printf ("hadii deyal system : %s\n", s+2);
 }
