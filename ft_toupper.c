@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 23:08:13 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/11 20:20:28 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/19 19:57:39 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/19 21:27:17 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	size_t			i;
-
-	i = 0;
-	while (i < n)
-		((char *)s)[i++] = 0;
+	if (c >= 65 && c <= 90)
+		return (c);
+	else if (c >= 97 && c <= 122)
+	{
+		c -= 32;
+		return (c);
+	}
+	return (0);
 }
-
-/*void *ft_memset(void *b, int c, size_t len);
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t			i;
-
-	i = 0;
-	ft_memset(s, 0, n);
-}*/
 
 int	main ()
 {
-	char s[13]="hello world !";
+	int		c;
+	c = 116;
+	ft_toupper(c);
+	printf ("hadii deyalii : %c\n", c);
 
-	ft_bzero(s, 2);
-	printf ("hadii deyaliii     : %s\n", s+2);
-	bzero(s, 2);
-	printf ("hadii deyal system : %s\n", s+2);
+	int		l;
+	l = 116;
+	ft_toupper(l);
+	printf ("hadii deyalii : %c\n", l);
 }

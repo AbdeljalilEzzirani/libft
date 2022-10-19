@@ -26,20 +26,22 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;
-
+	char *str = (char*)s;
 	i = 0;
 	while (i < n)
-		((char *)s)[i++] = c;
-	
+		str[i++] = c;
+	return str;
 }
 
 int	main ()
 {
-	char b[] = "hello world !";
+	char *b = NULL;
 
 	// printf("%s\n",b);
 	// ft_memset(b, 97, 1);
 	// printf("hadiii deyalii : %s\n",b);
 	ft_memset(b + 2, '_', 8);
+	printf("hadiii deyal system : %s\n",b);
+	memset(b + 2, '_', 8);
 	printf("hadiii deyal system : %s\n",b);
 }

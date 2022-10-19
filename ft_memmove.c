@@ -36,14 +36,14 @@ void *ft_memmove(void *dst, void *src, size_t len)
 
 }
 
-// int	main ()
-// {
-// 	char src[200]="Hello World";
-// 	//ft_memmove(src + 4, src + 6, 4);
-// 	//printf ("hadii deyali : %s\n", src);
-// 	memmove(src + 4, src + 6, 4);
-// 	printf ("hadii system : %s\n", src);
-// }
+int	main ()
+{
+	char *src=NULL;
+	ft_memmove(src + 4, src + 6, 4);
+	printf ("hadii deyali : %s\n", src);
+	memmove(src + 4, src + 6, 4);
+	printf ("hadii system : %s\n", src);
+}
 // int	main ()
 // {
 // 	char src[200]="Hello World";

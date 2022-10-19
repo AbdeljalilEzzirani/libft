@@ -1,30 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 21:49:25 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/19 20:39:46 by abez-zir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	strlcat(char * dst, const char * src, size_t dstsize)
+size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 {
+	size_t			lensrc;
+	size_t			lendst;
 	size_t			i;
+	size_t			n;
 
-	i = ft_strlen (dst);
-	while (i < dstsize - 1)
+	lensrc = ft_strlen (src);
+	lendst = ft_strlen (dst);
+	i = 0;
+	n = lendst;
+	if (dstsize < lendst)
+		return (lensrc + dstsize);
+	else
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && lendst < dstsize -1)
+		{
+			dst[lendst] = src[i];
+			lendst++;
+			i++;
+		}
+		return (lensrc + n);
 	}
-	dst[i] = '\0';
-	return (i);
+	return (0);
 }
 
 int	main ()
 {
-	char src[]="hello world !";
-	char dst[]="ppppppppppppp";
-	int			n;
-	int			m;
+	char src[]="hada string sinq sinq ::";
+	char dst[90]="over flow ::";
+	int					n;
+	n = ft_strlcat(dst, src, 20);
 
-	n = ft_strlcat(dst, src, 10);
 	printf ("hada deyaliii : %d\n", n);
 	printf ("hada deyaliii : %s\n", dst);
-	m = strlcat(dst, src, 5);
-	printf ("hada system : %d\n", m);
-	printf ("hada system : %s\n", dst);
+
+	int					m;
+	char ksrc[]="hada string sinq sinq ::";
+	char kdst[8]="over flow ::";
+	m = strlcat(kdst, ksrc, 20);
+	printf ("hadaaa system : %d\n", m);
+	printf ("hadaaa system : %s\n", kdst);
 }
