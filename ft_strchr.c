@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 19:57:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/20 14:42:45 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/20 15:04:07 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/20 20:59:38 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-int	ft_toupper(int c)
+char *ft_strchr(const char *s, int c)
 {
-	if (c >= 97 && c <= 122)
+	int			i;
+
+	i = 0;
+	while (s[i] <= '\0')
 	{
-		c -= 32;
-		return (c);
+		if (c == s[i])
+			return (s[i]);
 	}
-	else
-		return (c);
 	return (0);
 }
 
 int	main ()
 {
-	char k;
-	int		c;
-	c = 123;
-	k = ft_toupper(c);
+	char s[]="hello world !";
+	char r[100]="";
+	r = ft_strchr(s, 111);
+	printf ("hada deyaliii : %s\n", r);
 
-	printf ("hadii deyalii : %c\n", k);
+	char l[]="hello world !";
+	char k[100]="";
 
-	int		l;
-	char H;
-	l = 123;
-	H = toupper(l);
-	printf ("hadii deyalii : %c\n", H);
+	strchr(l, 119);
+	printf ("hada deyalhom : %s\n", k);
 }

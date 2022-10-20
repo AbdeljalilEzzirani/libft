@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 19:57:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/20 14:42:45 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/20 14:45:59 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/20 15:01:50 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <ctype.h>
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 65 && c <= 90)
 	{
-		c -= 32;
+		c += 32;
 		return (c);
 	}
 	else
@@ -29,13 +30,13 @@ int	main ()
 	char k;
 	int		c;
 	c = 123;
-	k = ft_toupper(c);
+	k = ft_tolower(c);
 
 	printf ("hadii deyalii : %c\n", k);
 
 	int		l;
 	char H;
 	l = 123;
-	H = toupper(l);
+	H = tolower(l);
 	printf ("hadii deyalii : %c\n", H);
 }
