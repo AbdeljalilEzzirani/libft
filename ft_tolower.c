@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:45:59 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/20 15:01:50 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:09:09 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	main ()
 {
 	char k;
 	int		c;
-	c = 123;
+	c = 122;
 	k = ft_tolower(c);
 
 	printf ("hadii deyalii : %c\n", k);
 
 	int		l;
 	char H;
-	l = 123;
+	l = 122;
 	H = tolower(l);
 	printf ("hadii deyalii : %c\n", H);
 }
