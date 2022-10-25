@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 15:04:07 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/25 14:01:08 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/25 12:57:49 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/25 14:13:06 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char *ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 
 	i = 0;
-	while (s[i])
+	while (((unsigned char *)s)[i] && i < n)
 	{
-		if (c == s[i])
-			return ((char *)s + i);
-		/*if (s[i] == '\0')
-			return (0);*/
-		i++;
+		if (c == ((unsigned char *)s)[i])
+			return ((void *)s + i);
+			i++;
 	}
 	return (NULL);
 }
@@ -33,13 +31,11 @@ int	main ()
 {
 	char s[]="hello world !";
 	char *p;
-	p = ft_strchr(s, '\0');
+	p = ft_memchr(s, 'z', 5);
 	printf ("hada deyaliii : %s\n", p);
 
 	char l[]="hello world !";
 	char *d;
-	d = strchr(l, '\0');
+	d = memchr(l, 'z', 5);
 	printf ("hada deyalhom : %s\n", d);
 }
-
-// hena be9aat liya lcas li ila 3ettitihaa 0 ou '\0' khasseha te3ettek behaal system wakha raah resulta hiya lii ttalebiin liiya lman strchr

@@ -1,43 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 13:30:03 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/25 11:44:49 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/10/25 11:45:51 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/10/25 18:07:41 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				i;
+	size_t			i;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		if (c == s[i])
-			return ((char *)s + i);
-		if (s == '\0')
-			return (NULL);
-		i--;
+		if (s1[i] > s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		else if (s1[i] < s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
 	}
 	return (0);
 }
 
 int	main ()
 {
-	char l[]="hello d world !";
-	char *p;
-	p = ft_strrchr(l, 75);
-	printf ("hada deyalii : %s\n", p);
+	char r1[]="";
+	char r2[]="hello";
+	int				j;
+	j = ft_strncmp(r1, r2, 9);
+	printf ("%d\n", j);
 
-	char z[]="hello d world !";
-	char *k;
-	k = strrchr(z, 75);
-	printf ("hada system : %s\n", k);
+
+
+	char s1[]="";
+	char s2[]="hello";
+	int				i;
+	i = strncmp(s1, s2, 9);
+	printf ("%d\n", i);
 }
