@@ -6,12 +6,12 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:49:25 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/30 17:56:02 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:30:16 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 {
@@ -41,7 +41,7 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 	return (0);
 }
 
-int	main ()
+/*int	main ()
 {
 	char src[]="hada string sinq sinq ::";
 	//char dst[90]="over flow ::";
@@ -50,11 +50,10 @@ int	main ()
 
 	printf ("hada deyaliii : %d\n", n);
 	//printf ("hada deyaliii : %s\n", dst);
-
+}*/
 	/*int					m;
 	char ksrc[]="hada string sinq sinq ::";
 	//char kdst[8]="over flow ::";
 	m = strlcat(NULL, ksrc, 0);
 	printf ("hadaaa system : \n%d\n", m);
 	//printf ("hadaaa system : %s\n", kdst);*/
-}
