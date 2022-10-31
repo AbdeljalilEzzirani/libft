@@ -6,11 +6,12 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:49:25 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/19 20:39:46 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:56:02 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 {
@@ -21,6 +22,8 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 
 	lensrc = ft_strlen (src);
 	lendst = ft_strlen (dst);
+	if (dst == NULL && dstsize == 0) //rood lball me3aa haad lcas raah system mehandliiih
+		return (lensrc);
 	i = 0;
 	n = lendst;
 	if (dstsize < lendst)
@@ -41,17 +44,17 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 int	main ()
 {
 	char src[]="hada string sinq sinq ::";
-	char dst[90]="over flow ::";
-	int					n;
-	n = ft_strlcat(dst, src, 20);
+	//char dst[90]="over flow ::";
+	int	n;
+	n = ft_strlcat(NULL, src, 0);
 
 	printf ("hada deyaliii : %d\n", n);
-	printf ("hada deyaliii : %s\n", dst);
+	//printf ("hada deyaliii : %s\n", dst);
 
-	int					m;
+	/*int					m;
 	char ksrc[]="hada string sinq sinq ::";
-	char kdst[8]="over flow ::";
-	m = strlcat(kdst, ksrc, 20);
-	printf ("hadaaa system : %d\n", m);
-	printf ("hadaaa system : %s\n", kdst);
+	//char kdst[8]="over flow ::";
+	m = strlcat(NULL, ksrc, 0);
+	printf ("hadaaa system : \n%d\n", m);
+	//printf ("hadaaa system : %s\n", kdst);*/
 }
