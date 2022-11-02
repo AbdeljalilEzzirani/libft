@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:20:19 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/31 11:33:53 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:39:42 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-int	main ()
+/*int	main ()
 {
 	char str[200]="hello world !";
 	char *ptr;
 	ptr = ft_substr(str, 6, 8);
 	printf ("%s\n", ptr);
 
-	/*char src[200]="hello world !";
-	char *p;
-	p = ft_substr(src, 6, 4);
-	printf ("%s\n", p);*/
-}
+	//char src[200]="hello world !";
+	//char *p;
+	//p = ft_substr(src, 6, 4);
+	//printf ("%s\n", p);
+}*/
