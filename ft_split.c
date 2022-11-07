@@ -6,43 +6,71 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/06 22:12:23 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:26:15 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	int count_nbr_case_in_tab2D(char const *s, char c)
+{
+	int				nbr;
+	int				i;
+
+	i = 0;
+	nbr = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+			i++;
+		if (s[i])
+			nbr = nbr + 1;
+	}
+	return (nbr);
+}
 
 char **ft_split(char const *s, char c)
 {
 	int				i;
 	int				j;
 	int				len;
+	int				swap;
 	char			**tab;
-	char			*cas;
+	int				nbr;
+	int				f;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	f = 0;
+	nbr = count_nbr_case_in_tab2D(s, c);
+	tab = (char **) malloc(sizeof(char*) * (nbr + 1));
+	while (s[i] && j < nbr)
 	{
+		while (s[i] == c)
+			i++;
+		swap = i;
 		while (s[i] != c)
+			i++;
+		len = i - swap;
+		tab[j] = ft_substr(s, swap, len);
+		if (tab[j] == NULL)
 		{
-			j = i;
-			++tab;
-			while (s[j] != c)
-				j++;
-			len = j - i;
-			cas = ft_substr(s, i, len);
-			tab = (char **) malloc (sizeof(char [i][len + 1]));
-			ft_strlcpy((char *)s, tab[i], len + 1);
-			i = j;
+			while (tab[++f])
+				free(tab[f]);
+			free(tab);
+			return (NULL);
 		}
-		i++;
+		j++;
 	}
+	tab[j] = 0;
 	return (tab);
 }
 
 int	main ()
 {
-	char src[]="__hello__world_how_are_you___";
+	char src[]="i__hello__world_how_are_you___";
 	char			**p;
 	int				i;
 
