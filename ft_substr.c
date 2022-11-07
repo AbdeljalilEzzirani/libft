@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:20:19 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/07 20:22:10 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/08 00:06:54 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	j = ft_strlen(s);
 	if (start > j)
-		return ((char *)s);
+		return ((char *)s);// khaseha tereturner (NULL)
 	if (len > j)
 		len = j - start;
 	p = (char *) malloc (sizeof(char) * len + 1);
@@ -43,7 +43,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char str[]="hello world !";
 	char *ptr;
-	ptr = ft_substr(str, 4, 20);
+	ptr = ft_substr(str, 16, 20);
 	printf ("%s\n", ptr);
-}
-*/
+}*/
