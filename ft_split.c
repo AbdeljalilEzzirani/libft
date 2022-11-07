@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/07 21:26:15 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:04:53 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ char **ft_split(char const *s, char c)
 	f = 0;
 	nbr = count_nbr_case_in_tab2D(s, c);
 	tab = (char **) malloc(sizeof(char*) * (nbr + 1));
+	/*if (tab[j] == NULL)
+		{
+			while (tab[++f])
+				free(tab[f]);  {   henaa fiin deret lfree  }
+			free(tab);
+			return (NULL);
+		}*/
 	while (s[i] && j < nbr)
 	{
 		while (s[i] == c)
@@ -55,13 +62,6 @@ char **ft_split(char const *s, char c)
 			i++;
 		len = i - swap;
 		tab[j] = ft_substr(s, swap, len);
-		if (tab[j] == NULL)
-		{
-			while (tab[++f])
-				free(tab[f]);
-			free(tab);
-			return (NULL);
-		}
 		j++;
 	}
 	tab[j] = 0;
