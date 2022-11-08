@@ -6,32 +6,34 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/08 00:46:49 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:00:47 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int count_nbr_case_in_tab2D(char const *s, char c)
+static	int	count_nbr_case_in_tab(char const *s, char c)
 {
 	int				nbr;
 	int				i;
 
 	i = 0;
-	nbr = 1;
+	nbr = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] == c)
 			i++;
-		while (s[i] && s[i] != c)
-			i++;
-		if (s[i])
+		if (s[i] != c && s[i])
+		{
 			nbr = nbr + 1;
+			while (s[i] != c && s[i])
+				i++;
+		}
 	}
 	return (nbr);
 }
 
-static void free_tab_2D(char **s)
+static	void	free_tab(char **s)
 {
 	int			i;
 
@@ -44,23 +46,20 @@ static void free_tab_2D(char **s)
 	free(s);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int				i;
 	int				j;
-	int				len;
 	int				swap;
 	char			**tab;
 	int				nbr;
-	int				f;
 
 	if (s == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	f = 0;
-	nbr = count_nbr_case_in_tab2D(s, c);
-	tab = (char **) malloc(sizeof(char *) * (nbr));
+	nbr = count_nbr_case_in_tab(s, c);
+	tab = (char **) malloc(sizeof(char *) * (nbr + 1));
 	if (tab == NULL)
 		return (NULL);
 	while (s[i] && j < nbr)
@@ -70,11 +69,10 @@ char **ft_split(char const *s, char c)
 		swap = i;
 		while (s[i] != c)
 			i++;
-		len = i - swap;
-		tab[j] = ft_substr(s, swap, len);
+		tab[j] = ft_substr(s, swap, (i - swap));
 		if (tab[j] == NULL)
 		{
-			free_tab_2D(tab);
+			free_tab(tab);
 			return (NULL);
 		}
 		j++;
@@ -93,16 +91,15 @@ int	main ()
 	p = ft_split(src, '_');
 	while (p[i])
 	{
-		printf ("%s||", p[i]);
+		printf ("%s || ", p[i]);
 		i++;
 	}
-	p[i - 1] = "hello";
+	p[i - 1] = "problem";
 	i = 0;
 	printf ("\n");
 	while (p[i])
 	{
-		printf ("%s||", p[i]);
+		printf ("%s || ", p[i]);
 		i++;
 	}
-
 }
