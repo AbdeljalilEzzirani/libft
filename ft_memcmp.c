@@ -30,17 +30,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-int	main ()
-{
-	char r1[]="hello";
-	char r2[]="hellokkjdfjsb";
-	int				j;
-	j = ft_memcmp(r1, r2, 15);
-	printf ("%d\n", j);
+// int	main ()
+// {
+// 	char r1[]="hello";
+// 	char r2[]="hellokkjdfjsb";
+// 	int				j;
+// 	j = ft_memcmp(r1, r2, 15);
+// 	printf ("%d\n", j);
 
-	char s1[]="hello";
-	char s2[]="hellokkjbsdkb";
-	int				i;
-	i = memcmp(s1, s2, 15);
-	printf ("%d\n", i);
-}
+// 	char s1[]="hello";
+// 	char s2[]="hellokkjbsdkb";
+// 	int				i;
+// 	i = memcmp(s1, s2, 15);
+// 	printf ("%d\n", i);
+// }

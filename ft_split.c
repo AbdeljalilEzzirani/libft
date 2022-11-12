@@ -81,25 +81,25 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-int	main ()
-{
-	char src[]="i__hello__world_how_are_you___";
-	char			**p;
-	int				i;
+// int	main ()
+// {
+// 	char src[]="i__hello__world_how_are_you___";
+// 	char			**p;
+// 	int				i;
 
-	i = 0;
-	p = ft_split(src, '_');
-	while (p[i])
-	{
-		printf ("%s || ", p[i]);
-		i++;
-	}
-	p[i - 1] = "problem";
-	i = 0;
-	printf ("\n");
-	while (p[i])
-	{
-		printf ("%s || ", p[i]);
-		i++;
-	}
-}
+// 	i = 0;
+// 	p = ft_split(src, '_');
+// 	while (p[i])
+// 	{
+// 		printf ("%s || ", p[i]);
+// 		i++;
+// 	}
+// 	p[i - 1] = "problem";
+// 	i = 0;
+// 	printf ("\n");
+// 	while (p[i])
+// 	{
+// 		printf ("%s || ", p[i]);
+// 		i++;
+// 	}
+// }

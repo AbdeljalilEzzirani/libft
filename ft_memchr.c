@@ -16,26 +16,28 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
+	unsigned char 	*p;
 
+	p = (unsigned char *)s;
 	i = 0;
-	while (((unsigned char *)s)[i] && i < n)
+	while (i < n)
 	{
-		if (c == ((unsigned char *)s)[i])
-			return ((void *)s + i);
-			i++;
+		if ((unsigned char )c == p[i])
+			return ((void *)&p[i]);
+		i++;
 	}
-	return (NULL);
+	return(0);
 }
 
-int	main ()
-{
-	char s[]="hello world !";
-	char *p;
-	p = ft_memchr(s, 'z', 5);
-	printf ("hada deyaliii : %s\n", p);
+// int	main ()
+// {
+// 	char s[]="hello world !";
+// 	char *p;
+// 	p = ft_memchr(s, 'z', 5);
+// 	printf ("hada deyaliii : %s\n", p);
 
-	char l[]="hello world !";
-	char *d;
-	d = memchr(l, 'z', 5);
-	printf ("hada deyalhom : %s\n", d);
-}
+// 	char l[]="hello world !";
+// 	char *d;
+// 	d = memchr(l, 'z', 5);
+// 	printf ("hada deyalhom : %s\n", d);
+// }

@@ -1,52 +1,60 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/30 21:55:42 by abez-zir          #+#    #+#              #
-#    Updated: 2022/11/01 22:09:34 by abez-zir         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = libft.a
 
-SRC = Makefile
-ft_isalpha.c
-ft_memcmp.c
-ft_strdup.c
-ft_strnstr.c
-libft.h
-ft_atoi.c
-ft_isascii.c
-ft_memcpy.c
-ft_strlcat.c
-ft_strrchr.c
-ft_bzero.c
-ft_isdigit.c
-ft_memmove.c
-ft_strlcpy.c
-ft_substr.c
-ft_calloc.c
-ft_isprint.c
-ft_memset.c
-ft_strlen.c
-ft_tolower.c
-ft_isalnum.c
-ft_memchr.c
-ft_strchr.c
-ft_strncmp.c
-ft_toupper.c
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -f
 
-OBJ = $(SRC:.c=.o)
+FILES = ft_memset \
+		ft_bzero \
+		ft_memcpy \
+		ft_memmove \
+		ft_memchr \
+		ft_memcmp \
+		ft_strlen \
+		ft_strlcpy \
+		ft_strlcat \
+		ft_strchr \
+		ft_strrchr \
+		ft_strnstr \
+		ft_strncmp \
+		ft_atoi \
+		ft_isalpha \
+		ft_isdigit \
+		ft_isalnum \
+		ft_isascii \
+		ft_isprint \
+		ft_toupper \
+		ft_tolower \
+		ft_calloc \
+		ft_strdup \
+		ft_substr \
+		ft_strjoin \
+		ft_strtrim \
+		ft_split \
+		ft_itoa \
+		ft_strmapi \
 
-HDR = libft.h
+SRCS_DIR = ./
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 
-NAME = final
+OBJS_DIR = ./
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
-FLG = -Wall -Wextra -Werror
+.c.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-all:
-	@gcc $(FLG) $(SRC) $(HDR) -c
-	@gcc $(FLG) $(OBJ) $(HDR) -o $(NAME)
-	@echo "compilation done"
+$(NAME): $(OBJS)
+	$(AR) $@ $^
+
+all: $(NAME)
+
 clean:
+	$(RM) $(OBJS) $(OBJS_B)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: clean all
+
+.PHONY: bonus all clean fclean re

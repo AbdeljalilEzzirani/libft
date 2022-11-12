@@ -50,8 +50,8 @@ int	ft_atoi(const char *str)
 	return (0);
 }
 
-int main()
-{
-	printf("%d\n", ft_atoi("-98765abc"));
-	printf("%d\n",    atoi("-98765abc"));
-}
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("-98765abc"));
+// 	printf("%d\n",    atoi("-98765abc"));
+// }

@@ -29,15 +29,15 @@ char	*ft_strrchr(const char *s, int c)
 	return (0);
 }
 
-int	main ()
-{
-	char l[]="hello d world !";
-	char *p;
-	p = ft_strrchr(l, 75);
-	printf ("hada deyalii : %s\n", p);
+// int	main ()
+// {
+// 	char l[]="hello d world !";
+// 	char *p;
+// 	p = ft_strrchr(l, 75);
+// 	printf ("hada deyalii : %s\n", p);
 
-	char z[]="hello d world !";
-	char *k;
-	k = strrchr(z, 75);
-	printf ("hada system : %s\n", k);
-}
+// 	char z[]="hello d world !";
+// 	char *k;
+// 	k = strrchr(z, 75);
+// 	printf ("hada system : %s\n", k);
+// }

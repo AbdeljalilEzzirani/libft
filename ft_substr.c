@@ -19,11 +19,11 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	size_t				j;
 
 	i = 0;
-	if (!s)
+	if (s == NULL)
 		return (NULL);
 	j = ft_strlen(s);
-	if (start > j)
-		return ((char *)s);// khaseha tereturner (NULL)
+	if (start >= j)
+		return (NULL);// khaseha tereturner (NULL)
 	if (len > j)
 		len = j - start;
 	p = (char *) malloc (sizeof(char) * len + 1);

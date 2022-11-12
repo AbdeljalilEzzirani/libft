@@ -53,13 +53,13 @@
     return (0);
 }
 
-int	main ()
-{
-	char hays[]="heakllo akdbez";
-	char need[]="";
-	printf ("hada deyalii : %s\n", ft_strnstr(hays, need, 11));
+// int	main ()
+// {
+// 	char hays[]="heakllo akdbez";
+// 	char need[]="";
+// 	printf ("hada deyalii : %s\n", ft_strnstr(hays, need, 11));
 	
-	char heep[]="heakllo akdbez";
-	char nuud[]="";
-	printf ("hada system : %s\n", strnstr(heep, nuud, 11));
-}
+// 	char heep[]="heakllo akdbez";
+// 	char nuud[]="";
+// 	printf ("hada system : %s\n", strnstr(heep, nuud, 11));
+// }

@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:45:59 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/23 11:09:09 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/11/11 23:42:09 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/11/12 16:11:40 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
-int	ft_tolower(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 65 && c <= 90)
+	int					i;
+	char				*dst;
+
+	i = ft_strlen(s);
+	dst = (char *) malloc (sizeof(char) * i);
+	if (dst == NULL)
+		return (NULL);
+	while (i < 0)
 	{
-		c += 32;
-		return (c);
+		dst[i] = s[i];
+		i--;
 	}
-	else
-		return (c);
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		dst[i] = f(i, s[i]);
+		i++;
+	}
+	return (dst);
 }
 
-// int	main ()
-// {
-// 	char k;
-// 	int		c;
-// 	c = 122;
-// 	k = ft_tolower(c);
+int main ()
+{
+	char			p[]="hello world !";;
+	char			str;
+	int				c;
 
-// 	printf ("hadii deyalii : %c\n", k);
-
-// 	int		l;
-// 	char H;
-// 	l = 122;
-// 	H = tolower(l);
-// 	printf ("hadii deyalii : %c\n", H);
-// }
+	str = ft_strmapi(p, ft_isalpha(c));
+	printf ("%c\n", str);
+}

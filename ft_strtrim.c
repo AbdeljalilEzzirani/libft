@@ -66,20 +66,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	m = heseebliya(s1, set);
 	n = heseeb_recto_verso(s1, set);
 	lent = n - m;
-	p = (char *) malloc ((lent + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
+	// p = (char *) malloc ((lent + 1) * sizeof(char));
+	// if (p == NULL)
+	// 	return (NULL);
 	p = ft_substr(s1, m, lent);// o hena wach neziido +1 ou non
-	p[lent + 1] = '\0';// rood lball me3aa haad +1 raah !!!
+	// p[lent + 1] = '\0';// rood lball me3aa haad +1 raah !!!
 	return (p);
 }
 
-int main ()
-{
-	char s2[]="_+_+_+_+hello _+_ world_+_+_+_+";
-	char s3[]="_+_+_+_+";
-	char *ptr;
+// int main ()
+// {
+// 	char s2[]="_+_+_+_+hello _+_ world_+_+_+_+";
+// 	char s3[]="_+_+_+_+";
+// 	char *ptr;
 
-	ptr = ft_strtrim(s2, s3);
-	printf ("%s\n", ptr);
-}
+// 	ptr = ft_strtrim(s2, s3);
+// 	printf ("%s\n", ptr);
+// }
+
+
+//acbcabbchhhhhhhhhhhhhhhhhhbcabcba
+//abc

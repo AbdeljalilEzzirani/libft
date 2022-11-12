@@ -36,6 +36,7 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 			lendst++;
 			i++;
 		}
+		dst[lendst]='\0';
 		return (lensrc + n);
 	}
 	return (0);
