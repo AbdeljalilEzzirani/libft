@@ -6,11 +6,12 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:31:04 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 01:10:29 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:10:22 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include<fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -27,6 +28,9 @@ void	ft_putstr_fd(char *s, int fd)
 int main ()
 {
 	char src[]="are you ready !!?";
-	ft_putstr_fd(src, 1);
-	ft_putchar_fd('\n', 1);
+	int					fd;
+
+	fd = open ("hada-file", 777);
+	ft_putstr_fd(src, fd);
+	ft_putchar_fd('\n', fd);
 }*/

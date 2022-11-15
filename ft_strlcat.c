@@ -6,14 +6,13 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:49:25 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/31 14:30:16 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:01:58 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t			lensrc;
 	size_t			lendst;
@@ -22,7 +21,7 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 
 	lensrc = ft_strlen (src);
 	lendst = ft_strlen (dst);
-	if (dst == NULL && dstsize == 0) //rood lball me3aa haad lcas raah system mehandliiih
+	if (dst == NULL && dstsize == 0)
 		return (lensrc);
 	i = 0;
 	n = lendst;
@@ -36,12 +35,12 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 			lendst++;
 			i++;
 		}
-		dst[lendst]='\0';
+		dst[lendst] = '\0';
 		return (lensrc + n);
 	}
 	return (0);
 }
-
+//rood lball me3aa haad lcas raah system mehandliiih
 /*int	main ()
 {
 	char src[]="hada string sinq sinq ::";

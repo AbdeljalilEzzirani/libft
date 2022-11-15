@@ -6,24 +6,24 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:20:19 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/08 00:06:54 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:12:51 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*p;
-	size_t			i;
-	size_t				j;
+	char							*p;
+	size_t							i;
+	size_t							j;
 
 	i = 0;
 	if (s == NULL)
 		return (NULL);
 	j = ft_strlen(s);
 	if (start >= j)
-		return (NULL);// khaseha tereturner (NULL)
+		return (NULL);
 	if (len > j)
 		len = j - start;
 	p = (char *) malloc (sizeof(char) * len + 1);

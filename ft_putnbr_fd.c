@@ -6,13 +6,14 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 01:15:34 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 03:35:22 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:20:34 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include<fcntl.h>
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == INT_MIN)
 	{
@@ -33,9 +34,12 @@ void ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n % 10 + 48, fd);
 	}
 }
-
+/*
 int main ()
 {
-	ft_putnbr_fd(-21474836478, 1);
-	ft_putchar_fd('\n', 1);
-}
+	int					fd;
+
+	fd = open ("putnbr-_-file", 777);
+	ft_putnbr_fd(-2147483647, fd);
+	ft_putchar_fd('\n', fd);
+}*/

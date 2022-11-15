@@ -6,13 +6,13 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:16:47 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/14 01:16:46 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:47:23 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, void *src, size_t len)
+void	*ft_memmove(void *dst, void *src, size_t len)
 {
 	size_t			i;
 
@@ -33,7 +33,6 @@ void *ft_memmove(void *dst, void *src, size_t len)
 		}
 	}
 	return (dst);
-
 }
 
 // int	main ()
@@ -47,7 +46,6 @@ void *ft_memmove(void *dst, void *src, size_t len)
 // int	main ()
 // {
 // 	char src[200]="Hello World";
-	
 // 	// printf("%s", ft_memmove(NULL, src, 5));
 // 	printf("%s", memmove(NULL, src, 5));
 // }

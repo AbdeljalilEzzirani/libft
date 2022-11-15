@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:46:22 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/30 17:21:21 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:36:48 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
 }
-
-/*int	main ()
+/*
+int	main ()
 {
 	char s[200]="hello world ! hello world ?!";
 	size_t i;

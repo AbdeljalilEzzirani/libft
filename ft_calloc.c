@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:45:47 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/30 17:22:55 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:39:14 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,20 @@
 //#include <stdio.h>
 //#include <string.h>
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	int					*ptr;
-	size_t		tot_size;
+	size_t				tot_size;
 
 	tot_size = count * size;
-	ptr = (int*) malloc(tot_size);
+	ptr = (int *) malloc(tot_size);
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, tot_size);
-	//memset(ptr, '\0', tot_size); 
 	return (ptr);
 }
-
-/*int	main ()
+/*
+int	main ()
 {
 	int	i;
 	int *s;

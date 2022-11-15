@@ -6,14 +6,13 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:04:07 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/10/25 14:01:08 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:53:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int		i;
 
@@ -25,7 +24,7 @@ char *ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == (char )c)
-		return((char *)&s[i]);
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
@@ -41,5 +40,6 @@ char *ft_strchr(const char *s, int c)
 // 	d = strchr(l, '\0');
 // 	printf ("hada deyalhom : %s\n", d);
 // }
-
-// hena be9aat liya lcas li ila 3ettitihaa 0 ou '\0' khasseha te3ettek behaal system wakha raah resulta hiya lii ttalebiin liiya lman strchr
+// hena be9aat liya lcas li ila 3ettitihaa 0 ou '\0'
+// khasseha te3ettek behaal system wakha raah resulta 
+// hiya lii ttalebiin liiya lman strchr
