@@ -1,49 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 23:42:09 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/14 20:56:13 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/11/14 20:51:17 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/11/14 23:46:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*char	func_west_func(unsigned int i, char s)
+/*void	func_test(unsigned int i, char *s)
 {
+	int					j;
+
+	j = 0;
 	i = 1;
-	if (s >= 0 && s <= 127)
-		s = s + i;
-	return (s);
+	if (s[j])
+		s[j] = s[j] + i;
 }
 */
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int					i;
-	char				*dst;
 
-	if (!s || !f)
-		return (NULL);
-	i = ft_strlen(s);
-	dst = (char *) malloc (sizeof(char) * i);
-	if (dst == NULL)
-		return (NULL);
 	i = 0;
+	if (!s || !f)
+		return ;
 	while (s[i])
 	{
-		dst[i] = f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
 }
 /*
-int main ()
+int	main ()
 {
-	char			p[]="A B C D !";
+	char src[]="";
 
-	printf ("%s\n", ft_strmapi(p, func_west_func));
+	ft_striteri(src, func_test);
+	printf ("%s", src);
 }*/

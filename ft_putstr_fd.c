@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 23:42:09 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/14 20:56:13 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/11/15 00:31:04 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/11/15 01:10:29 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*char	func_west_func(unsigned int i, char s)
-{
-	i = 1;
-	if (s >= 0 && s <= 127)
-		s = s + i;
-	return (s);
-}
-*/
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putstr_fd(char *s, int fd)
 {
 	int					i;
-	char				*dst;
 
-	if (!s || !f)
-		return (NULL);
-	i = ft_strlen(s);
-	dst = (char *) malloc (sizeof(char) * i);
-	if (dst == NULL)
-		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		dst[i] = f(i, s[i]);
+		write (fd, &s[i], 1);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
 }
 /*
 int main ()
 {
-	char			p[]="A B C D !";
-
-	printf ("%s\n", ft_strmapi(p, func_west_func));
+	char src[]="are you ready !!?";
+	ft_putstr_fd(src, 1);
+	ft_putchar_fd('\n', 1);
 }*/
