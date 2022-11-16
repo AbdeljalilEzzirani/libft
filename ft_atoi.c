@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 20:35:29 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:34:31 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int	ft_atoi(const char *str)
 
 int main()
 {
-	printf("%d\n", ft_atoi("--98765abc"));
-	printf("%d\n",    atoi("--98765abc"));
+	printf("%d\n", ft_atoi("-+98765abc"));
+	printf("%d\n",    atoi("-+98765abc"));
 }
