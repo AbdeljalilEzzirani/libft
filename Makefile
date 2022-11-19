@@ -39,6 +39,8 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_lstnew \
+		ft_lstadd_front \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

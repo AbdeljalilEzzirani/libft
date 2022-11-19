@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:04:48 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 01:13:15 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/19 16:04:40 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,15 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
