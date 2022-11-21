@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 13:54:30 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/21 01:27:02 by abez-zir         ###   ########.fr       */
+/*   Created: 2022/11/21 01:29:45 by abez-zir          #+#    #+#             */
+/*   Updated: 2022/11/21 02:14:44 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list					*node;
-
-	node = (t_list *) malloc(sizeof(t_list));
-	if (node == NULL)
+	if (!lst)
 		return (NULL);
-	node -> content = content;
-	node -> next = NULL;
-	return (node);
+	while (lst->next != NULL)
+		lst = lst -> next;
+	return (lst);
 }
 /*
-int main ()
+int	main ()
 {
-	t_list			*exp;
-	char		value[]="Hello World !";
-	exp = ft_lstnew(value);
-	printf ("%s\n", exp->content);
+	t_list				*node0 = ft_lstnew("last");
+	t_list				*node1 = ft_lstnew("never");
+	t_list				*node2 = ft_lstnew("center");
+	t_list				*node3 = ft_lstnew("begin");
+
+
+	ft_lstadd_front(&node0, node1);
+	ft_lstadd_front(&node1, node2);
+	ft_lstadd_front(&node2, node3);
+	printf("%s\n", ft_lstlast(node3)->content);
 }*/
