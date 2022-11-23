@@ -34,22 +34,22 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-int	main ()
-{
-	t_list				*node0 = ft_lstnew("last");
-	t_list				*node1 = ft_lstnew("never");
-	t_list				*node2 = ft_lstnew("center");
-	t_list				*node3 = ft_lstnew("begin");
+// int	main ()
+// {
+// 	t_list				*node0 = ft_lstnew("last");
+// 	t_list				*node1 = ft_lstnew("never");
+// 	t_list				*node2 = ft_lstnew("center");
+// 	t_list				*node3 = ft_lstnew("begin");
 
 
-	ft_lstadd_front(&node0, node1);
-	ft_lstadd_front(&node1, node2);
-	ft_lstadd_front(&node2, node3);
-	while (node0)
-	{
-		printf ("before : %s\n", node3->content);
-		node0 = node0 -> next;
-	}
-	ft_lstiter(node3, funct);
-	printf ("after : %s\n", node3->content);
-}
+// 	ft_lstadd_front(&node0, node1);
+// 	ft_lstadd_front(&node1, node2);
+// 	ft_lstadd_front(&node2, node3);
+// 	while (node0)
+// 	{
+// 		printf ("before : %s\n", node3->content);
+// 		node0 = node0 -> next;
+// 	}
+// 	ft_lstiter(node3, funct);
+// 	printf ("after : %s\n", node3->content);
+// }

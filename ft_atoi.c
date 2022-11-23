@@ -21,15 +21,20 @@ int	ft_atoi(const char *str)
 	i = 0;
 	fact = 1;
 	rst = 0;
-	while (str[i] <= 32)
+	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (str[i] == '-' || (str[i] == '+'))
 	{
-		if (str[i] == '-' && str[i + 1] != '-')
+		// if (str[i] == '-' && str[i + 1] != '-')
+		// 	fact = fact * (-1);
+		// else if ((str[i + 1] <= 48 && str[i + 1] >= 57)
+		// 	|| (str[i + 1] == '-' || str[i + 1] == '+'))
+		// 	return (0);
+		if (str[i] == '-')
 			fact = fact * (-1);
-		else if ((str[i + 1] <= 48 && str[i + 1] >= 57)
-			|| (str[i + 1] == '-' || str[i + 1] == '+'))
+		if (str[i + 1] == '+' || str[i + 1] == '-')
 			return (0);
+			
 		i++;
 	}
 	if (str[i] != '\0')
@@ -47,9 +52,9 @@ int	ft_atoi(const char *str)
 	}
 	return (0);
 }
-/*
-int main()
-{
-	printf("%d\n", ft_atoi("-+98765abc"));
-	printf("%d\n",    atoi("-+98765abc"));
-}*/
+
+// int main()
+// {	
+// 	printf("%d\n", ft_atoi("\x15 100"));
+// 	printf("%d\n",    atoi("\x15 100"));
+// }

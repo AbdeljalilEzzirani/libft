@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-FILES = ft_memset \
+src =		ft_memset \
 		ft_bzero \
 		ft_memcpy \
 		ft_memmove \
@@ -39,36 +39,38 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_lstnew \
-		ft_lstadd_front \
-		ft_lstsize \
-		ft_lstlast \
-		ft_lstadd_back \
-		ft_lstdelone \
-		ft_lstclear \
-		ft_lstiter \
-		ft_lstmap \
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+B_SRCS =		ft_lstnew \
+			ft_lstadd_front \
+			ft_lstsize \
+			ft_lstlast \
+			ft_lstadd_back \
+			ft_lstdelone \
+			ft_lstclear \
+			ft_lstiter \
+			ft_lstmap \
 
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+OBJ = $(SRC:%.c=%.o)
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+B_OBJ = $(B_SRCS:%.c=%.o)
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+bonus:$(B_OBJ)
+	$(AR) $(NAME) $(B_OBJ)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	$(RM) $(OBJ) $(B_OBJ)
 
-fclean: clean
+fclean:	clean
 	$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re bonus

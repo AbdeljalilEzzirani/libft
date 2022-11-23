@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:01:35 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 19:00:29 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:12:01 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new -> next = *lst;
 	*lst = new;
 }
-
+/*
 int	main ()
 {
 	t_list *node1 = ft_lstnew("heloo");
@@ -36,4 +36,4 @@ int	main ()
 	ft_lstadd_front(&ptr, news);
 	printf ("%s ptr after = %p \n", (char *)(ptr -> content), ptr);
 	printf("%s", (char *)((ptr -> next) -> content));
-}
+}*/
