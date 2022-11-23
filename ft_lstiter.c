@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 04:11:57 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 04:54:04 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:11:11 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	funct(void *list)
 {
+	int					j;
 	int					i;
-	int j;
 
-	i = 1;
 	j = 0;
-	if (list)
-		while((char)list[j])
-		{
-			(char)list[i] = (char)list[j] + i;
-			j++;
-		}
+	i = 1;
+	if (((char *)(list))[j])
+		((char *)(list))[j] = ((char *)(list))[j] + i;
 }
 
 void ft_lstiter(t_list *lst, void (*f)(void *))
@@ -49,6 +45,11 @@ int	main ()
 	ft_lstadd_front(&node0, node1);
 	ft_lstadd_front(&node1, node2);
 	ft_lstadd_front(&node2, node3);
+	while (node0)
+	{
+		printf ("before : %s\n", node3->content);
+		node0 = node0 -> next;
+	}
 	ft_lstiter(node3, funct);
-	printf ("%s\n", node3->content);
+	printf ("after : %s\n", node3->content);
 }

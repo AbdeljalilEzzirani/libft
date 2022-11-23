@@ -47,6 +47,7 @@ FILES = ft_memset \
 		ft_lstdelone \
 		ft_lstclear \
 		ft_lstiter \
+		ft_lstmap \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

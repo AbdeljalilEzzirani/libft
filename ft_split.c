@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/08 21:00:47 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:28:45 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,14 @@ static	void	free_tab(char **s)
 	free(s);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_lkhedma(const char *s, char **tab, int nbr, char c)
 {
-	int				i;
-	int				j;
-	int				swap;
-	char			**tab;
-	int				nbr;
+	int						i;
+	int						j;
+	int						swap;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
 	j = 0;
-	nbr = count_nbr_case_in_tab(s, c);
-	tab = (char **) malloc(sizeof(char *) * (nbr + 1));
-	if (tab == NULL)
-		return (NULL);
 	while (s[i] && j < nbr)
 	{
 		while (s[i] == c)
@@ -70,6 +62,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] != c)
 			i++;
 		tab[j] = ft_substr(s, swap, (i - swap));
+		printf ("%s---%d\n", tab[j], j);
 		if (tab[j] == NULL)
 		{
 			free_tab(tab);
@@ -78,28 +71,44 @@ char	**ft_split(char const *s, char c)
 		j++;
 	}
 	tab[j] = NULL;
+	printf ("test6\n");
 	return (tab);
 }
 
-// int	main ()
-// {
-// 	char src[]="i__hello__world_how_are_you___";
-// 	char			**p;
-// 	int				i;
+char	**ft_split(char const *s, char c)
+{
+	char							**tab;
+	int								nbr;
 
-// 	i = 0;
-// 	p = ft_split(src, '_');
-// 	while (p[i])
-// 	{
-// 		printf ("%s || ", p[i]);
-// 		i++;
-// 	}
-// 	p[i - 1] = "problem";
-// 	i = 0;
-// 	printf ("\n");
-// 	while (p[i])
-// 	{
-// 		printf ("%s || ", p[i]);
-// 		i++;
-// 	}
-// }
+	if (s == NULL)
+		return (NULL);
+	nbr = count_nbr_case_in_tab(s, c);
+	tab = (char **) malloc(sizeof(char *) * (nbr + 1));
+	if (tab == NULL)
+		return (NULL);
+	tab = ft_lkhedma(s, tab, nbr, c);
+	return (tab);
+}
+/*
+int	main ()
+{
+	char src[]="i__hello__world_how_are_you___";
+	char			**p;
+	int				i;
+
+	i = 0;
+	p = ft_split(src, '_');
+	while (p[i])
+	{
+		printf ("%s || ", p[i]);
+		i++;
+	}
+	p[i - 1] = "problem";
+	i = 0;
+	printf ("\n");
+	while (p[i])
+	{
+		printf ("%s || ", p[i]);
+		i++;
+	}
+}*/

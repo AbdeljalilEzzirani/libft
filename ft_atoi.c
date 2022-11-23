@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/16 15:34:31 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:51:01 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	ft_atoi(const char *str)
 	{
 		if (str[i] == '-' && str[i + 1] != '-')
 			fact = fact * (-1);
-		else if ((str[i + 1] <= 48 && str[i + 1] >= 57) || (str[i + 1] == '-' || str[i + 1] == '+'))
+		else if ((str[i + 1] <= 48 && str[i + 1] >= 57)
+			|| (str[i + 1] == '-' || str[i + 1] == '+'))
 			return (0);
 		i++;
 	}
@@ -46,9 +47,9 @@ int	ft_atoi(const char *str)
 	}
 	return (0);
 }
-
+/*
 int main()
 {
 	printf("%d\n", ft_atoi("-+98765abc"));
 	printf("%d\n",    atoi("-+98765abc"));
-}
+}*/
