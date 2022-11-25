@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:20:19 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/25 01:11:57 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:33:46 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	main ()
 {
 	char str[]="hello world !";
 	char *ptr;
-	ptr = ft_substr(str, 30, 20);
+	ptr = ft_substr(str, 2, 3);
 	printf ("%s\n", ptr);
 }*/

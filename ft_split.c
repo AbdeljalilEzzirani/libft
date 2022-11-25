@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/25 04:31:14 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:44:02 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_lkhedma(s, tab, nbr, c));
 }
-
+/*
 int	main ()
 {
 	char src[]="i__hello__world_how_are_you___";
@@ -108,4 +108,4 @@ int	main ()
 		printf ("%s || ", p[i]);
 		i++;
 	}
-}
+}*/
