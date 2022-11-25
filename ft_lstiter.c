@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 04:11:57 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 18:11:11 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/24 22:50:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	funct(void *list)
 		((char *)(list))[j] = ((char *)(list))[j] + i;
 }
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
@@ -33,15 +33,12 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst -> next;
 	}
 }
-
 // int	main ()
 // {
 // 	t_list				*node0 = ft_lstnew("last");
 // 	t_list				*node1 = ft_lstnew("never");
 // 	t_list				*node2 = ft_lstnew("center");
 // 	t_list				*node3 = ft_lstnew("begin");
-
-
 // 	ft_lstadd_front(&node0, node1);
 // 	ft_lstadd_front(&node1, node2);
 // 	ft_lstadd_front(&node2, node3);

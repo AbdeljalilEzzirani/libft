@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:52:51 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/11 19:52:24 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 02:46:13 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,35 @@ int	len_allocation(long nbr)
 	return (count);
 }
 
-char	*allocation(long nbr)
-{
-	char				*p;
-	int					count;
-
-	count = len_allocation(nbr);
-	p = (char *) malloc (sizeof(char) * (count + 1));
-	if (p == NULL)
-		return (NULL);
-	return (p);
-}
-
-char	*itoa_negative(long n)
+char	*itoa_positive(long n, char *ptr)
 {
 	int						count;
 	long					tmp;
 	int						rip;
-	char					*ptr;
 
 	count = len_allocation(n);
-	ptr = allocation(n);
+	rip = count;
+	while (count > 0)
+	{
+		if (n >= 0)
+		{
+			tmp = n % 10;
+			n = n / 10;
+			ptr[count - 1] = tmp + 48;
+		}
+		count--;
+	}
+	ptr[rip] = '\0';
+	return (ptr);
+}
+
+char	*itoa_negative(long n, char *ptr)
+{
+	int						count;
+	long					tmp;
+	int						rip;
+
+	count = len_allocation(n);
 	rip = count;
 	while (count > 1)
 	{
@@ -71,29 +79,19 @@ char	*itoa_negative(long n)
 char	*ft_itoa(int n)
 {
 	int						count;
-	long					tmp;
-	int						rip;
 	long					cast;
 	char					*p;
 
 	cast = n;
-	if (cast < 0)
-		return (itoa_negative(cast));
 	count = len_allocation(cast);
-	p = allocation(n);
-	rip = count;
-	while (count > 0)
-	{
-		if (cast >= 0)
-		{
-			tmp = cast % 10;
-			cast = cast / 10;
-			p[count - 1] = tmp + 48;
-		}
-		count--;
-	}
-	p[rip] = '\0';
-	return (p);
+	p = (char *) malloc (sizeof(char) * (count + 1));
+	if (p == NULL)
+		return (NULL);
+	if (cast < 0)
+		return (itoa_negative(cast, p));
+	if (cast >= 0)
+		return (itoa_positive(cast, p));
+	return (0);
 }
 /*
 int	main()

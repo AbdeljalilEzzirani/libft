@@ -23,15 +23,11 @@ int	main ()
 {
 	char s[200]="hello world ! hello world ?!";
 	size_t i;
-
 	i = 5;
 	ft_bzero(s + 5, i);
 	printf ("%s\n", s);
-
-
 	char sv[200]="hello world ! hello world ?!";
 	size_t j;
-
 	j = 5;
 	bzero(sv + 5, j);
 	printf ("%s\n", sv);

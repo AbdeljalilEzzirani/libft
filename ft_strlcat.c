@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:49:25 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 18:01:58 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 03:53:53 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	lensrc = ft_strlen (src);
 	lendst = ft_strlen (dst);
-	if (dst == NULL && dstsize == 0)
+	if (dst == NULL || dstsize == 0)
 		return (lensrc);
 	i = 0;
 	n = lendst;
@@ -41,16 +41,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (0);
 }
 //rood lball me3aa haad lcas raah system mehandliiih
-/*int	main ()
+/*
+int	main ()
 {
-	char src[]="hada string sinq sinq ::";
-	//char dst[90]="over flow ::";
+	//char src[]="hada string sinq sinq ::";
+	char dst[90]="";
 	int	n;
-	n = ft_strlcat(NULL, src, 0);
+	n = ft_strlcat(dst, "123", 0);
 
 	printf ("hada deyaliii : %d\n", n);
 	//printf ("hada deyaliii : %s\n", dst);
-}*/
+}
+*/
 	/*int					m;
 	char ksrc[]="hada string sinq sinq ::";
 	//char kdst[8]="over flow ::";

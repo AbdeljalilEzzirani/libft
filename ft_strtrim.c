@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:58:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 17:48:47 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/24 23:27:24 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	m = heseebliya(s1, set);
 	n = heseeb_recto_verso(s1, set);
 	lent = n - m;
-/*p = (char *) malloc ((lent + 1) * sizeof(char));
-if (p == NULL)
-return (NULL);*/
-	p = ft_substr(s1, m, lent);// o hena wach neziido +1 ou non
-	// p[lent + 1] = '\0';// rood lball me3aa haad +1 raah !!!
+	p = ft_substr(s1, m, lent + 1);
 	return (p);
 }
-// int main ()
-// {
-// 	char s2[]="_+_+_+_+hello _+_ world_+_+_+_+";
-// 	char s3[]="_+_+_+_+";
-// 	char *ptr;
-// 	ptr = ft_strtrim(s2, s3);
-// 	printf ("%s\n", ptr);
-// }
-//acbcabbchhhhhhhhhhhhhhhhhhbcabcba
-//abc
+/*
+int main ()
+{
+	char s2[]="_+_+_+_+hello _+_ world_+_+_+_+";
+	char s3[]="_+_+_+_+";
+	char *ptr;
+	ptr = ft_strtrim(s2, s3);
+	printf ("%s\n", ptr);
+}*/

@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 17:28:45 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 04:31:14 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ static char	**ft_lkhedma(const char *s, char **tab, int nbr, char c)
 		while (s[i] != c)
 			i++;
 		tab[j] = ft_substr(s, swap, (i - swap));
-		printf ("%s---%d\n", tab[j], j);
 		if (tab[j] == NULL)
 		{
 			free_tab(tab);
@@ -71,7 +70,6 @@ static char	**ft_lkhedma(const char *s, char **tab, int nbr, char c)
 		j++;
 	}
 	tab[j] = NULL;
-	printf ("test6\n");
 	return (tab);
 }
 
@@ -86,10 +84,9 @@ char	**ft_split(char const *s, char c)
 	tab = (char **) malloc(sizeof(char *) * (nbr + 1));
 	if (tab == NULL)
 		return (NULL);
-	tab = ft_lkhedma(s, tab, nbr, c);
-	return (tab);
+	return (ft_lkhedma(s, tab, nbr, c));
 }
-/*
+
 int	main ()
 {
 	char src[]="i__hello__world_how_are_you___";
@@ -111,4 +108,4 @@ int	main ()
 		printf ("%s || ", p[i]);
 		i++;
 	}
-}*/
+}

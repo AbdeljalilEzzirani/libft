@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 02:24:02 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/23 20:12:37 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 03:15:04 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	// t_list				lastnode;
-
 	if (!lst || !new)
 		return ;
+	if (!*lst)
+		return (ft_lstadd_front(lst, new));
 	ft_lstlast(*lst)->next = new;
 }
 /*

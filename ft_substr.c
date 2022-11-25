@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:20:19 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/15 18:12:51 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 01:11:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	j = ft_strlen(s);
 	if (start >= j)
-		return (NULL);
+		return (ft_strdup(""));
 	if (len > j)
 		len = j - start;
 	p = (char *) malloc (sizeof(char) * len + 1);
@@ -38,11 +38,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	p[i] = '\0';
 	return (p);
 }
-
-/*int	main ()
+/*
+int	main ()
 {
 	char str[]="hello world !";
 	char *ptr;
-	ptr = ft_substr(str, 16, 20);
+	ptr = ft_substr(str, 30, 20);
 	printf ("%s\n", ptr);
 }*/

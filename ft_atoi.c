@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 17:51:01 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/25 00:29:24 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,36 +25,22 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] == '-' || (str[i] == '+'))
 	{
-		// if (str[i] == '-' && str[i + 1] != '-')
-		// 	fact = fact * (-1);
-		// else if ((str[i + 1] <= 48 && str[i + 1] >= 57)
-		// 	|| (str[i + 1] == '-' || str[i + 1] == '+'))
-		// 	return (0);
 		if (str[i] == '-')
 			fact = fact * (-1);
 		if (str[i + 1] == '+' || str[i + 1] == '-')
 			return (0);
-			
 		i++;
 	}
-	if (str[i] != '\0')
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		while (str[i] >= 48 && str[i] <= 57)
-		{
-			rst = (rst * 10) + fact * (str[i] - 48);
-			i++;
-			if (rst > INT_MAX)
-				return (-1);
-			if (rst < INT_MIN)
-				return (0);
-		}
-		return (rst);
+		rst = (rst * 10) + fact * (str[i] - 48);
+		i++;
 	}
-	return (0);
+	return (rst);
 }
-
-// int main()
-// {	
-// 	printf("%d\n", ft_atoi("\x15 100"));
-// 	printf("%d\n",    atoi("\x15 100"));
-// }
+/*
+int main()
+{	
+	printf("%d\n", ft_atoi("+100"));
+	printf("%d\n",    atoi("+100"));
+}*/
