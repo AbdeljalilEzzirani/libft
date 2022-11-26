@@ -6,7 +6,7 @@
 /*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:14:44 by abez-zir          #+#    #+#             */
-/*   Updated: 2022/11/22 01:02:24 by abez-zir         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:15:59 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 }
 /*
 int main ()
-{
+
 	t_list			*new = ft_lstnew("hello world");
 
 	ft_lstdelone(new, deletecontent);
