@@ -1,5 +1,3 @@
-NAME = libft.a
-
 SRC =	ft_isascii.c \
 		ft_lstclear.c\
 		ft_lstsize.c \
@@ -47,36 +45,45 @@ SRC =	ft_isascii.c \
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS	=	ft_lstadd_front.c \
-				ft_lstmap.c \
-				ft_lstadd_back.c \
-				ft_lstlast.c \
-				ft_lstiter.c \
-				ft_lstdelone.c \
-				ft_lstsize.c \
-				ft_lstclear.c\
-				ft_lstnew.c \
+			ft_lstmap.c \
+			ft_lstadd_back.c \
+			ft_lstlast.c \
+			ft_lstiter.c \
+			ft_lstdelone.c \
+			ft_lstsize.c \
+			ft_lstclear.c\
+			ft_lstnew.c \
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
+$(NAME) : $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@echo "libft.a is te9aadaaat"
+
+%.o : %.c libft.h
+	@$(CC) $(FLAGS) -c $<
+
+.PHONY: all clean fclean re bonus
+
 all : $(NAME)
 
 bonus : all $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ_BONUS)
-
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-
-%.o : %.c
-	$(CC) $(FLAGS) -c $<
+	@ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
-	rm -rf *.o
+	@rm -rf $(OBJ)
+	@echo "fichier.o is temehaaaaw"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "clean salaat"
+	@echo "libft.a is mehiiinahaaa"
+	@echo "fclean is salaat"
 
 re: fclean all

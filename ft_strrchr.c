@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if ((char)c == s[i])
 			return ((char *)s + i);
-		if (s == '\0')
+		if (!s)
 			return (NULL);
 		i--;
 	}
